@@ -71,7 +71,7 @@ class Bill:
     def __repr__(self):
         return f"Bill(kwota={self.amount}, data_platnosci='{self.payment_date}', typ='{self.bill_type}', mieszkanie='{self.apartment_id}')"
 try:
-    with open('bills.json', 'r', encoding='utf-8') as f:
+    with open('data/bills.json', 'r', encoding='utf-8') as f:
         bills_data = json.load(f)
         
 
