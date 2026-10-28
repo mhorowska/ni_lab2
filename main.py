@@ -80,6 +80,28 @@ class Manager:
         self.tenants = Tenant.from_json_file(self.parameters.tenants_json_path)
         self.transfers = Transfer.from_json_file(self.parameters.transfers_json_path)
 
+class Bill:
+    def __init__(self, amount, payment_date, bill_type, apartment_id):
+        self.amount = amount
+        self.payment_date = payment_date
+        self.bill_type = bill_type
+        self.apartment_id = apartment_id
+
+    def __repr__(self):
+        return f"Bill(kwota={self.amount}, data_platnosci='{self.payment_date}', typ='{self.bill_type}', mieszkanie='{self.apartment_id}')"
+try:
+    with open('data/bills.json', 'r', encoding='utf-8') as f:
+        bills_data = json.load(f)
+        
+
+    bills_list = [Bill(**data) for data in bills_data]
+
+    for bill in bills_list:
+        print(bill)
+        
+except FileNotFoundError:
+    print("Nie znaleziono pliku bills.json")
+
 if __name__ == '__main__':
     parameters = Parameters()
     manager = Manager(parameters)
