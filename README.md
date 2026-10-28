@@ -1,7 +1,7 @@
 # NIP rent
 
 Aplikacja do rozliczania najmowanych mieszkań.
-
+zmianaaaa
 ## Getting started
 
 - Używając *Python3.12* utwórz *venv* i zainstaluj zależności
